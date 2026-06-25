@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_URL: sqlite:////app/instance/wordle.db
+      SECRET_KEY: change-me-in-production
+    volumes:
+      - wordle-data:/app/instance
+
+volumes:
+  wordle-data:

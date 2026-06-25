@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: wordle-leaderboard
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:////app/instance/wordle.db
+      - key: SECRET_KEY
+        generateValue: true
+    disk:
+      name: wordle-data
+      mountPath: /app/instance
+      sizeGB: 1

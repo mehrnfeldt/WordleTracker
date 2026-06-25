@@ -1,0 +1,27 @@
+{
+  "name": "Wordle Leaderboard",
+  "short_name": "Wordle Board",
+  "description": "Track Wordle scores for Megan, Ben, Syd, and Cathy.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fb",
+  "theme_color": "#538d4e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/static/icons/wordle.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Import Results",
+      "short_name": "Import",
+      "url": "/import",
+      "description": "Paste copied Wordle results."
+    }
+  ]
+}
