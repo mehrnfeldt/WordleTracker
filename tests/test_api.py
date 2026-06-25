@@ -119,7 +119,7 @@ def test_clear_history_removes_results_but_keeps_players():
     assert response.status_code == 200
     assert b"History cleared" in response.data
     with app.app_context():
-        assert Player.query.count() == 1
+        assert Player.query.count() == 5
         assert WordleResult.query.count() == 0
 
 
@@ -134,3 +134,15 @@ def test_web_app_manifest_and_service_worker_are_available():
     assert manifest.content_type.startswith("application/manifest+json") or manifest.content_type.startswith("application/octet-stream")
     assert service_worker.status_code == 200
     assert service_worker.headers["Service-Worker-Allowed"] == "/"
+
+
+def test_default_players_are_created_on_startup():
+    app = create_app(TestConfig)
+
+    with app.app_context():
+        assert [player.name for player in Player.query.order_by(Player.name).all()] == [
+            "Ben",
+            "Cathy",
+            "Megan",
+            "Syd",
+        ]

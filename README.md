@@ -25,13 +25,9 @@ The app includes a web-app manifest, icon, and service worker so it can launch f
 2. In Render, choose New, then Blueprint.
 3. Connect the GitHub repository.
 4. Render will read `render.yaml` and build the Dockerfile.
-5. After the first deploy, open the Render Shell for the service and run:
+5. Open the deployed app URL.
 
-```bash
-python seed.py
-```
-
-This creates Megan, Ben, Syd, and Cathy with an empty leaderboard.
+The app automatically creates Megan, Ben, Syd, and Cathy when the database is empty, so Render Shell is not required.
 
 Render will give you an HTTPS URL ending in `onrender.com`. Open that URL on your phone and use Add to Home Screen.
 
