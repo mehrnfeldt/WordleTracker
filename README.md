@@ -24,7 +24,7 @@ The app includes a web-app manifest, icon, and service worker so it can launch f
 1. Push this project to a GitHub repository.
 2. In Render, choose New, then Blueprint.
 3. Connect the GitHub repository.
-4. Render will read `render.yaml`, build the Dockerfile, and attach a persistent disk at `/app/instance`.
+4. Render will read `render.yaml` and build the Dockerfile.
 5. After the first deploy, open the Render Shell for the service and run:
 
 ```bash
@@ -34,6 +34,8 @@ python seed.py
 This creates Megan, Ben, Syd, and Cathy with an empty leaderboard.
 
 Render will give you an HTTPS URL ending in `onrender.com`. Open that URL on your phone and use Add to Home Screen.
+
+Note: Render's free web service does not support persistent disks. The included `render.yaml` uses free hosting, so SQLite data can be lost when the service is redeployed or restarted. For persistent hosted data, use a paid Render service with a disk, or switch the app to a hosted database such as PostgreSQL.
 
 ## Reset players and clear results
 

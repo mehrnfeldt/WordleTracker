@@ -9,7 +9,3 @@ services:
         value: sqlite:////app/instance/wordle.db
       - key: SECRET_KEY
         generateValue: true
-    disk:
-      name: wordle-data
-      mountPath: /app/instance
-      sizeGB: 1
